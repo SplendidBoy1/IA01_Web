@@ -43,3 +43,4 @@ $(".more_content_symbol").on("mouseenter", function () {
 })
 
 ////////////////////
+

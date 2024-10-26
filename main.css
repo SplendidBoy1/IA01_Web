@@ -113,7 +113,7 @@ h1{
     height: 40px;
     background-image: linear-gradient(#E8EEFE 10%, #1853E5 90%);
     display: grid;
-    grid-template-columns: 20% 15% 8% 8% 8% 20% 7% 5%;
+    grid-template-columns: 20% 15% 8% 8% 8% 5% 15% 7% 5%;
     column-gap: 10px;
     padding-left: 30px;
     padding-right: 30px
@@ -130,9 +130,14 @@ h1{
 }
 
 .sample_text{
+    /* border-style: solid; */
     margin-top: auto;
     margin-bottom: auto;
-    text-align: right;
+    text-align: center;
+}
+
+.show_all_sample{
+    background-color: yellow;
 }
 
 .process_text_input{
@@ -188,7 +193,6 @@ h1{
     content: "";
     position: absolute;
     top: -9%;
-    /* margin-left: -50px; */
     left: 50%;
     border-width: 5px;
     border-style: solid;

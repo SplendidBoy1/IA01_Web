@@ -57,18 +57,20 @@ h1{
 }
 
 .title_newbox{
-    background-color: orange;
+    background-color: #FFD3A7;
     height: 40px;
     display: grid;
     grid-template-columns: 10% 80% 10%;
     font-size: 24px;
-    color: white;
+    color: black;
+    opacity: 0.7;
 }
 
 .drag_newbox{
     border:0;
     border-style: solid;
     width: inherit;
+    margin-bottom: 5px;
 }
 
 .drag_news{
@@ -93,4 +95,8 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.content_newbox{
+    display: none;
 }

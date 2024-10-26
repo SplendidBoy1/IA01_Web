@@ -69,14 +69,28 @@
                 <div class="taskbar_process">
                     <div class="tittle_process">Process Text</div>
                     <input class="process_text_input" type="text">
-                    <button class="process_button">Highlight</button>
-                    <button class="process_button">Delete</button>
-                    <button class="process_button">Reset</button>
+                    <button class="process_button" id="highlight">Highlight</button>
+                    <button class="process_button" id="delete">Delete</button>
+                    <button class="process_button" id="reset">Reset</button>
                     <div class="sample_text">SampleText</div>
-                    <input class="color_input" type="color">
-                    <button class="button_image"></button>
+                    <input class="color_input" type="color" name="text_color">
+                    <button class="button_image">
+                        <div class="toggle">
+                            <input type="checkbox" id="bold_check" name="bold_check">
+                            <label for="bold_check">Bold</label>
+                            <br>
+                            <input type="checkbox" id="italic_check" name="italic_check">
+                            <label for="italic_check">Italic</label>
+                            <br>
+                            <input type="checkbox" id="underline_check" name="underline_check">
+                            <label for="underline_check">Underline</label>
+                            <br>
+                            <input style="width: 30%;" type="color" id="background_color" name="background_color">
+                            <label for="background_color">Background</label>
+                        </div>
+                    </button>
                 </div>
-                <div class="text_lorem">asdf</div>
+                <div class="text_lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolorem doloribus culpa. Alias doloremque id non delectus ratione nesciunt omnis, eius mollitia dicta fuga odio optio provident magnam assumenda maiores.</div>
             </div>
             <div>
             </div>

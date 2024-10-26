@@ -43,4 +43,37 @@ $(".more_content_symbol").on("mouseenter", function () {
 })
 
 ////////////////////
+//process text
 
+// $(".dialog").dialog({
+//     autoOpen : false, modal : true, show : "blind", hide : "blind"
+//   });
+
+$(".toggle").hide()
+
+$(".button_image").on("click", function(){
+    console.log("asdf")
+    $(".toggle").toggle()
+    // $(".toggle").css(" visibility", "visible")
+})
+
+// $('.dialog').dialog({
+//     autoOpen: true,
+//     width: 'auto',
+//     modal: true,
+//     buttons: {
+//         DelUser:{ 
+//             class: 'leftButton',
+//             text: 'Delete User',
+//             click : function (){
+//                 alert('delete here');
+//             }
+//         },
+//         "Update User": function () {
+//                alert('update here');
+//    },
+//         Close: function () {
+//             $(this).dialog("close");
+//         }
+//     }
+// });

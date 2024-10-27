@@ -1,3 +1,91 @@
+////Lorem
+function generateLoremText(numParagraphs, numWords) {
+    var loremText = '';
+    var words = [
+      'Lorem',
+      'ipsum',
+      'dolor',
+      'sit',
+      'amet',
+      'consectetur',
+      'adipiscing',
+      'elit',
+      'sed',
+      'do',
+      'eiusmod',
+      'tempor',
+      'incididunt',
+      'ut',
+      'labore',
+      'et',
+      'dolore',
+      'magna',
+      'aliqua',
+      'Ut',
+      'enim',
+      'ad',
+      'minim',
+      'veniam',
+      'quis',
+      'nostrud',
+      'exercitation',
+      'ullamco',
+      'laboris',
+      'nisi',
+      'ut',
+      'aliquip',
+      'ex',
+      'ea',
+      'commodo',
+      'consequat',
+      'Duis',
+      'aute',
+      'irure',
+      'dolor',
+      'in',
+      'reprehenderit',
+      'in',
+      'voluptate',
+      'velit',
+      'esse',
+      'cillum',
+      'dolore',
+      'eu',
+      'fugiat',
+      'nulla',
+      'pariatur',
+      'Excepteur',
+      'sint',
+      'occaecat',
+      'cupidatat',
+      'non',
+      'proident',
+      'sunt',
+      'in',
+      'culpa',
+      'qui',
+      'officia',
+      'deserunt',
+      'mollit',
+      'anim',
+      'id',
+      'est',
+      'laborum',
+    ];
+  
+    for (var i = 0; i < numParagraphs; i++) {
+      var paragraph = '';
+      for (var j = 0; j < numWords; j++) {
+        var randomWord = words[Math.floor(Math.random() * words.length)];
+        paragraph += randomWord + ' ';
+      }
+      loremText += paragraph;
+    }
+    return loremText;
+  }
+
+
+
 
 // News box
 
@@ -48,6 +136,10 @@ $(".more_content_symbol").on("mouseenter", function () {
 // $(".dialog").dialog({
 //     autoOpen : false, modal : true, show : "blind", hide : "blind"
 //   });
+
+let lorem = generateLoremText(2 + Math.random() * 5, 20 + Math.random() * 25)
+console.log(lorem)
+$(".text_lorem").html(lorem)
 
 $(".toggle").hide()
 
@@ -116,51 +208,133 @@ function clear_hightlight(){
 $("#highlight").on("click", function(){
     clear_hightlight();
     let regex_text = $(".process_text_input").val()
-    let data = $(".text_lorem").html()
-    // console.log(data)
-    if (regex_text != ""){
-        let regex = new RegExp(regex_text, "g");
+    let data = $(".text_lorem").text()
+    let data_html = $(".text_lorem").html()
 
-        let hightlight = data.match(regex);
-        let matches = [...data.matchAll(regex)];
-        for (let i = 0; i < hightlight.length; i++){
-            data = data.replaceAt(matches[i].index, '<span class=\"show_all_sample\">' + hightlight[i] + '</span>')
-            console.log("Asdf")
-        }
-        console.log(matches.length)
-        console.log(hightlight)
-        // let hightlight = data.replace(regex, '<span class=\"show_all_sample\">' + data. + '</span>')
-        // console.log(hightlight)
-        $(".text_lorem").html(data)
+    console.log(data)
+    if (regex_text != ""){
+        let regex = new RegExp(regex_text, "g"); 
+            let highlights = data_html.replace(regex, function(match) {
+                return '<span class="show_all_sample">' + match + '</span>';
+            });
+            $(".text_lorem").html(highlights)
     }
-    // let newText = text.replace(re, `<mark>${searched}</mark>`);
 })
 
 $("#delete").on("click", function(){
-    console.log("asdf")
+    $(".text_lorem span").html("")
 })
 
 $("#reset").on("click", function(){
-    console.log("asdf")
+    lorem = generateLoremText(2 + Math.random() * 5, 20 + Math.random() * 25)
+    $(".text_lorem").html(lorem)
 })
 
-// $('.dialog').dialog({
-//     autoOpen: true,
-//     width: 'auto',
-//     modal: true,
-//     buttons: {
-//         DelUser:{ 
-//             class: 'leftButton',
-//             text: 'Delete User',
-//             click : function (){
-//                 alert('delete here');
-//             }
+
+////////////////////////////////
+//Drag and drop animal
+let index_animal = 1
+
+
+// function init_drag_drop(){
+//     $(".animal_card").draggable({
+//         zIndex: 2,
+//         revert: "invalid",
+//         appendTo: ".drop_box"
+//     })
+
+//     // $(".animal_card").data("element_box", $(".animal_card").text())
+//     $(".animal_card").each(function(){
+//         $(this).data("element_box", $(this).get(0).outerHTML)
+//         // console.log($(this).html())
+//     })
+//     $(".drop_box").droppable({
+//         accept: '.animal_card',
+//         over: function( event, ui ) {
+//             $(this).addClass("holder-place")
+//             // $(".holder_place").droppable()
+//             // $(this).parentNode
+//             // $( this )
+//             //   .addClass( "holder-place");
 //         },
-//         "Update User": function () {
-//                alert('update here');
-//    },
-//         Close: function () {
-//             $(this).dialog("close");
+//         out: function( event, ui ) {
+//             $(this).removeClass("holder-place")
+//         },
+//         drop: function( event, ui ) {
+//             $(this).removeClass("holder-place")
+//             // $(ui.draggable.data()["element_box"]).remove()
+//             console.log((ui.draggable.data("element_box")))
+//             // ui.draggable.data()
+//             $(this).html(ui.draggable.data("element_box"))
+//             $(".animal_card").draggable({
+//                 zIndex: 2,
+//                 revert: "invalid",
+//                 appendTo: ".drop_box"
+//             })
 //         }
-//     }
-// });
+//     })
+// }
+
+$("#add_animal").on("click", function () {
+    let value_animal = $.parseJSON($(animal).val())
+    console.log(value_animal)
+    $(".show_animal_box").append("<div class=\"animal_card\" id=\"animal_" + index_animal + "\"><div class=\"image_animal\">" + value_animal["image"] + "</div><div>" + value_animal["name"] +"</div></div>")
+    index_animal ++;
+    $(".show_animal_box").sortable(
+        {
+            over: function (e, ui){
+                // console.log(ui.placeholder)
+                $(ui.placeholder).addClass("holder-place")
+                $(ui.placeholder).css("visibility", "visible")
+                // console.log("asdf")
+            },
+            start: function(e, ui){
+                $(ui.placeholder).hide(300);
+            },
+            change: function (e,ui){
+                $(ui.placeholder).hide().show(300);
+            }
+            // start: function(e, ui){
+            //     $(ui.placeholder).hide(300);
+            // },
+            // change: function (e,ui){
+            //     $(ui.placeholder).hide().show(300);
+            // }
+        }
+    )
+    $(".show_animal_box").disableSelection();
+    // $(".show_animal_box").droppable({
+    //     // console.log("Asdfasdf");
+    //     hoverClass: "holder-place"
+    // })
+    // init_drag_drop()
+    console.log("Asdfasdf");
+})
+
+
+$(".show_animal_box").sortable(
+    {   
+        // revert:'invalid',
+        // start: function(e, ui){
+        //     $(ui.placeholder).hide(300);
+        // },
+        // change: function (e,ui){
+        //     $(ui.placeholder).hide().show(300);
+        // },
+        over: function (e, ui){
+            // console.log(ui.placeholder)
+            $(ui.placeholder).addClass("holder-place")
+            $(ui.placeholder).css("visibility", "visible")
+            // console.log("asdf")
+        },
+        start: function(e, ui){
+            $(ui.placeholder).hide(300);
+        },
+        change: function (e,ui){
+            $(ui.placeholder).hide().show(300);
+        }
+    }
+)
+$(".show_animal_box").disableSelection();
+// init_drag_drop()
+// $(".animal_card").sortable()

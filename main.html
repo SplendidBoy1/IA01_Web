@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,10 +65,10 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="right_content">
             <div class="process_text">
                 <div class="taskbar_process">
-                    <div class="tittle_process">Process Text</div>
+                    <div class="tittle">Process Text</div>
                     <input class="process_text_input" type="text">
                     <button class="process_button" id="highlight">Highlight</button>
                     <button class="process_button" id="delete">Delete</button>
@@ -91,9 +92,36 @@
                         </div>
                     </button>
                 </div>
-                <div class="text_lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolorem doloribus culpa. Alias doloremque id non delectus ratione nesciunt omnis, eius mollitia dicta fuga odio optio provident magnam assumenda maiores.</div>
+                <div class="text_lorem"></div>
             </div>
-            <div>
+            <div class="animal_box">
+                <div class="taskbar_animal">
+                    <div class="tittle">Drag & Drop</div>
+                    <select name="animal" id="animal">
+                        <option value='{"image":"🐁","name":"Mouse"}'>🐁</option>
+                        <option value='{"image":"🐃","name":"Buffalo"}'>🐃</option>
+                        <option value='{"image":"🐎","name":"Horse"}'>🐎</option>
+                        <option value='{"image":"🐍","name":"Snake"}'>🐍</option>
+                        <option value='{"image":"🐉","name":"Dragon"}'>🐉</option>
+                        <option value='{"image":"🐕","name":"Dog"}'>🐕</option>
+                        <option value='{"image":"🐈","name":"Cat"}'>🐈</option>
+                        <option value='{"image":"🐤","name":"Chip"}'>🐤</option>
+                        <option value='{"image":"🐇","name":"Rabbit"}'>🐇</option>
+                        <option value='{"image":"🦖","name":"T-rex"}'>🦖</option>
+                        <option value='{"image":"🐅","name":"Tiger"}'>🐅</option>
+                        <option value='{"image":"🐪","name":"Camel"}'>🐪</option>
+                      </select>
+                    <button class="add_animal" id="add_animal">Add</button>
+                </div>
+                <div class="show_animal_box">
+                    <!-- <div class="drop_box">
+                        <div class="animal_card" id="animal_0">
+                            <div class="image_animal">🐪</div>
+                            <div> Camel</div>
+                        </div>
+                    </div> -->
+                    
+                </div>
             </div>
         </div>
     </div>

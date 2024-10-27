@@ -335,3 +335,15 @@ $(".show_animal_box").sortable(
 // $(".show_animal_box").disableSelection();
 // init_drag_drop()
 // $(".animal_card").sortable()
+
+/////////////
+///Header and Footer
+$(".menu").on("click", function(){
+    $(".footer div").css("color", "")
+    $(".footer div").css("background-color", "")
+    $(".menu").css("color", "")
+    $(this).css("color", "yellow")
+    let find = ".footer #" + $(this).attr('id')
+    $(find).css("background-color", "orange")
+    $(find).css("color", "white")
+})

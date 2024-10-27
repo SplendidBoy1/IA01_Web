@@ -280,29 +280,29 @@ $("#add_animal").on("click", function () {
     console.log(value_animal)
     $(".show_animal_box").append("<div class=\"animal_card\" id=\"animal_" + index_animal + "\"><div class=\"image_animal\">" + value_animal["image"] + "</div><div>" + value_animal["name"] +"</div></div>")
     index_animal ++;
-    $(".show_animal_box").sortable(
-        {
-            over: function (e, ui){
-                // console.log(ui.placeholder)
-                $(ui.placeholder).addClass("holder-place")
-                $(ui.placeholder).css("visibility", "visible")
-                // console.log("asdf")
-            },
-            start: function(e, ui){
-                $(ui.placeholder).hide(300);
-            },
-            change: function (e,ui){
-                $(ui.placeholder).hide().show(300);
-            }
-            // start: function(e, ui){
-            //     $(ui.placeholder).hide(300);
-            // },
-            // change: function (e,ui){
-            //     $(ui.placeholder).hide().show(300);
-            // }
-        }
-    )
-    $(".show_animal_box").disableSelection();
+    // $(".show_animal_box").sortable(
+    //     {
+    //         over: function (e, ui){
+    //             // console.log(ui.placeholder)
+    //             $(ui.placeholder).addClass("holder-place")
+    //             $(ui.placeholder).css("visibility", "visible")
+    //             // console.log("asdf")
+    //         },
+    //         start: function(e, ui){
+    //             $(ui.placeholder).hide(300);
+    //         },
+    //         change: function (e,ui){
+    //             $(ui.placeholder).hide().show(300);
+    //         }
+    //         // start: function(e, ui){
+    //         //     $(ui.placeholder).hide(300);
+    //         // },
+    //         // change: function (e,ui){
+    //         //     $(ui.placeholder).hide().show(300);
+    //         // }
+    //     }
+    // )
+    // $(".show_animal_box").disableSelection();
     // $(".show_animal_box").droppable({
     //     // console.log("Asdfasdf");
     //     hoverClass: "holder-place"
@@ -314,27 +314,24 @@ $("#add_animal").on("click", function () {
 
 $(".show_animal_box").sortable(
     {   
-        // revert:'invalid',
-        // start: function(e, ui){
-        //     $(ui.placeholder).hide(300);
-        // },
-        // change: function (e,ui){
-        //     $(ui.placeholder).hide().show(300);
-        // },
+        tolerance: "pointer",
         over: function (e, ui){
             // console.log(ui.placeholder)
             $(ui.placeholder).addClass("holder-place")
             $(ui.placeholder).css("visibility", "visible")
             // console.log("asdf")
         },
-        start: function(e, ui){
-            $(ui.placeholder).hide(300);
-        },
-        change: function (e,ui){
-            $(ui.placeholder).hide().show(300);
-        }
+        // start: function(e, ui){
+        //     // console.log($(ui.placeholder))
+        //     $(ui.placeholder).hide(300);
+        // },
+        // change: function (e,ui){
+        //     // console.log($(ui.placeholder))
+        //     console.log($(ui.item))
+        //     $(ui.placeholder).hide().show(300);
+        // }
     }
-)
-$(".show_animal_box").disableSelection();
+).disableSelection()
+// $(".show_animal_box").disableSelection();
 // init_drag_drop()
 // $(".animal_card").sortable()

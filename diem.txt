@@ -1,0 +1,21 @@
+- Xây dựng bố cục tổng quát gồm Header, Nav, Main, Side, Footer: 100% - 10
+- Định dạng phần Header: 100% - 5
+- Định dạng phần Nav: 100% - 5
+- Định dạng phần Footer: 100% - 5
+- Định dạng phần Side: 100% - 10
+- Định dạng phần Process Text: 100% - 10
+- Định dạng phần Drag & Drop: 100% - 5
+- Cho phép đóng mở thu gọn NEWS: 100% - 5
+- Cho phép thay đổi thứ tự của NEWS: 100% - 10
+- Xử lý Sample Text tương ứng với điều khiển cách highlight: 100% - 10
+- Xử lý highlight cho chuỗi text: 100% - 10
+- Xử lý delete cho chuỗi text: 100% - 10
+- Xử lý reset cho chuỗi text: 100% - 5
+- Xử lý thêm item theo lựa chọn: 100% - 10
+- Xử lý kéo thả item có kết thúc là vào vị trí đảm bảo hàng cột: 100% - 10
+- Xử lý tạo chỗ trống khi kéo vào item và có animation: 25% - 2.5
+- Xử lý thả item về vị trí chọn: 25% - 2.5
+- Có highlight vị trí item: 100% - 0.5
+- Đáp ứng reponsive: 0% - 0
+
+Tổng điểm: 130
